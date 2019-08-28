@@ -16,7 +16,7 @@ pipeline {
                 success{
                     echo 'Now Archiving ....'
 
-                    archiveArtifacts artifacts : '**/*.war'
+                    sh 'scp archiveArtifacts artifacts : '**/*.war' ec2-user@172.31.8.16:/home/ec2-user/artifact/'
                 }
             }
 
