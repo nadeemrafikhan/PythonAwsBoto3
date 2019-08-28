@@ -12,6 +12,14 @@ pipeline {
 													sh 'scp -o StrictHostkeyChecking=no target/*.war ec2-user@172.31.8.16:/home/ec2-user/apache-tomcat-9.0.0.M10/webapps/'
 					}
 					}
+					post{
+                success{
+                    echo 'Now Archiving ....'
+
+                    archiveArtifacts artifacts : '**/*.war'
+                }
+            }
+
 					}
 					}
 					}
