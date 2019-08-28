@@ -15,6 +15,7 @@ pipeline {
 					post{
                 success{
                     echo 'Now Archiving ....'
+		    archiveArtifacts artifacts : '**/*.war' 
                      sshagent(['tocatdev']) {
                     sh 'scp archiveArtifacts artifacts : **/*.war ec2-user@172.31.8.16:/home/ec2-user/artifact/'
                 }
