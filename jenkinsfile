@@ -2,6 +2,9 @@ pipeline {
 						agent any 
 							stages {
 								stage ('Build'){
+								agent {
+								label 'jslave01'
+									}
 										steps {					
 												sh '/opt/maven/apache-maven-3.6.0/bin/mvn clean package'
 					}
