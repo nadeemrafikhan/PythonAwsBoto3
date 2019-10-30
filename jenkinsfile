@@ -7,7 +7,7 @@ pipeline {
 									}
 										steps {					
 												//sh '/opt/maven/apache-maven-3.6.2/bin/mvn clean package'
-												sh '/root/apache-maven-3.6.0/bin/mvn clean package'
+												sh '/opt/maven/apache-maven-3.6.2/bin/mvn clean package'
 					}
 					}
 								stage ('deploy') {
